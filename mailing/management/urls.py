@@ -1,19 +1,8 @@
 from django.urls import path, include, re_path
 from .views import *
 from rest_framework import routers
-from drf_yasg import openapi
-from drf_yasg.views import get_schema_view
 
-schema_view = get_schema_view(
-    openapi.Info(
-        title='SFmailng API',
-        default_version='1.0.0',
-        description='API documentation of App'
-    ),
-    public=True
-)
-
-
+from .yasg import schema_view
 
 router = routers.DefaultRouter()
 router.register('client', ClientViewSet)
