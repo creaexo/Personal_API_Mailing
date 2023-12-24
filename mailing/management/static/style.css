@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    align-items: center;
+    background-color: #363636;
+}
+
+a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #d9d9d9;
+}
+a:hover{
+    color: #bbb8b8;
+}

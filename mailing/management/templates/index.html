@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+   <a href="api/v1/">API</a>
+   <a href="{% url 'swagger-schema' %}">Open API swagger</a>
+    {% if staff %}
+   <a href="{% url 'add_users' %}">Добавить клиентов в справочник для тестирования</a>
+   <a href="{% url 'del_users' %}">Удалить всех клиентов</a>
+    {% endif %}
+    {% if request.user.is_authenticated %}
+   <a href="{% url 'mestat' %}">Статистика по сообщениям</a>
+   <a href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+
+   <a href="/admin/login/">Авторизация</a>
+    {% endif %}
+</body>
+</html>
